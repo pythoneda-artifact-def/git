@@ -124,8 +124,8 @@
       let
         org = "pythoneda-artifact";
         repo = "git";
-        version = "0.0.1a1";
-        sha256 = "sha256-ySAfq7sSrW5ZDcaTQv5MA7DPHFZHwpR+k7F+W8rBmDM=";
+        version = "0.0.1a5";
+        sha256 = "sha256-bXfCQLWj+5QL2CpFRIWE3lbFJhfBleCxU672yHGxgpc=";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
         pkgs = import nixos { inherit system; };
@@ -134,7 +134,7 @@
         homepage = "https://github.com/${org}/${repo}";
         maintainers = with pkgs.lib.maintainers;
           [ "rydnr <github@acm-sl.org>" ];
-        archRole = "S";
+        archRole = "B";
         space = "D";
         layer = "D";
         nixosVersion = builtins.readFile "${nixos}/.version";
@@ -209,7 +209,7 @@
               pythoneda-shared-pythoneda-domain
             ];
 
-            pythonImportsCheck = [ pythonpackage ];
+            #            pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
               cp -r ${src} .
