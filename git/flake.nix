@@ -23,7 +23,7 @@
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-artifact-changes-events = {
       url =
-        "github:pythoneda-shared-artifact-changes/events-artifact/0.0.1a17?dir=events";
+        "github:pythoneda-shared-artifact-changes/events-artifact/0.0.1a18?dir=events";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-artifact-changes-shared.follows =
@@ -39,7 +39,7 @@
     };
     pythoneda-shared-artifact-changes-shared = {
       url =
-        "github:pythoneda-shared-artifact-changes/shared-artifact/0.0.1a11?dir=shared";
+        "github:pythoneda-shared-artifact-changes/shared-artifact/0.0.1a12?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -49,7 +49,7 @@
     };
     pythoneda-shared-code-requests-events = {
       url =
-        "github:pythoneda-shared-code-requests/events-artifact/0.0.1a7?dir=events";
+        "github:pythoneda-shared-code-requests/events-artifact/0.0.1a8?dir=events";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-artifact-changes-shared.follows =
@@ -63,11 +63,15 @@
     };
     pythoneda-shared-code-requests-jupyter = {
       url =
-        "github:pythoneda-shared-code-requests/jupyter-artifact/0.0.1a6?dir=jupyter";
+        "github:pythoneda-shared-code-requests/jupyter-artifact/0.0.1a9?dir=jupyter";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-code-requests-shared.follows =
         "pythoneda-shared-code-requests-shared";
+      inputs.pythoneda-shared-git-shared.follows =
+        "pythoneda-shared-git-shared";
+      inputs.pythoneda-shared-nix-flake-shared.follows =
+        "pythoneda-shared-nix-flake-shared";
       inputs.pythoneda-shared-pythoneda-banner.follows =
         "pythoneda-shared-pythoneda-banner";
       inputs.pythoneda-shared-pythoneda-domain.follows =
@@ -75,7 +79,7 @@
     };
     pythoneda-shared-code-requests-shared = {
       url =
-        "github:pythoneda-shared-code-requests/shared-artifact/0.0.1a7?dir=shared";
+        "github:pythoneda-shared-code-requests/shared-artifact/0.0.1a8?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -84,7 +88,7 @@
         "pythoneda-shared-pythoneda-domain";
     };
     pythoneda-shared-git-shared = {
-      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a15?dir=shared";
+      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a17?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -94,7 +98,7 @@
     };
     pythoneda-shared-nix-flake-shared = {
       url =
-        "github:pythoneda-shared-nix-flake/shared-artifact/0.0.1a3?dir=shared";
+        "github:pythoneda-shared-nix-flake/shared-artifact/0.0.1a4?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-git-shared.follows =
@@ -112,7 +116,7 @@
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a38?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a40?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -130,8 +134,8 @@
       let
         org = "pythoneda-artifact";
         repo = "git";
-        version = "0.0.1a7";
-        sha256 = "sha256-JB4qC2idX1sbSe5zss9W1nMi6p6D9cMeXPFqZQ2+p6U=";
+        version = "0.0.1a8";
+        sha256 = "sha256-ASpRXX0YWGxEiz2EbYZiWzP+ymqQlzV73le22Vb91fY=";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
         pkgs = import nixos { inherit system; };
