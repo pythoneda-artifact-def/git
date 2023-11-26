@@ -78,8 +78,8 @@
       let
         org = "pythoneda-artifact";
         repo = "git";
-        version = "0.0.2";
-        sha256 = "sha256-8CwcwHJ9S9dEVBagtbCpt0XTgAjkhXackAzygL1d9Wk=";
+        version = "0.0.3";
+        sha256 = "15kpk33c5k3ysz90vqfmrvfbqaqqw96584ca69z38sdqsd5mxdsb";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
         pkgs = import nixos { inherit system; };
