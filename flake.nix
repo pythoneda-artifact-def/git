@@ -30,15 +30,6 @@
         "pythoneda-shared-pythoneda-domain";
       url = "github:pythoneda-shared-artifact-def/events/0.0.8";
     };
-    pythoneda-shared-artifact-shared = {
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
-      inputs.pythoneda-shared-pythoneda-banner.follows =
-        "pythoneda-shared-pythoneda-banner";
-      inputs.pythoneda-shared-pythoneda-domain.follows =
-        "pythoneda-shared-pythoneda-domain";
-      url = "github:pythoneda-shared-artifact-def/shared/0.0.10";
-    };
     pythoneda-shared-code-requests-jupyterlab = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
@@ -78,8 +69,8 @@
       let
         org = "pythoneda-artifact";
         repo = "git";
-        version = "0.0.3";
-        sha256 = "15kpk33c5k3ysz90vqfmrvfbqaqqw96584ca69z38sdqsd5mxdsb";
+        version = "0.0.4";
+        sha256 = "0i62w927bc615pd9xwq7avc4lb8r647rp2wjplbpfsqi9yjxqbd8";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
         pkgs = import nixos { inherit system; };
@@ -95,7 +86,6 @@
         nixpkgsRelease = "nixos-${nixosVersion}";
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
         pythoneda-artifact-git-for = { python, pythoneda-shared-artifact-events
-          , pythoneda-shared-artifact-shared
           , pythoneda-shared-code-requests-jupyterlab
           , pythoneda-shared-code-requests-shared
           , pythoneda-shared-pythoneda-domain }:
@@ -121,8 +111,6 @@
               package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
               pythonedaSharedArtifactEvents =
                 pythoneda-shared-artifact-events.version;
-              pythonedaSharedArtifactShared =
-                pythoneda-shared-artifact-shared.version;
               pythonedaSharedCodeRequestsJupyterlab =
                 pythoneda-shared-code-requests-jupyterlab.version;
               pythonedaSharedCodeRequestsShared =
@@ -142,7 +130,6 @@
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
             propagatedBuildInputs = with python.pkgs; [
               pythoneda-shared-artifact-events
-              pythoneda-shared-artifact-shared
               pythoneda-shared-code-requests-jupyterlab
               pythoneda-shared-code-requests-shared
               pythoneda-shared-pythoneda-domain
@@ -243,8 +230,6 @@
             python = pkgs.python38;
             pythoneda-shared-artifact-events =
               pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python38;
-            pythoneda-shared-artifact-shared =
-              pythoneda-shared-artifact-shared.packages.${system}.pythoneda-shared-artifact-shared-python38;
             pythoneda-shared-code-requests-jupyterlab =
               pythoneda-shared-code-requests-jupyterlab.packages.${system}.pythoneda-shared-code-requests-jupyterlab-python38;
             pythoneda-shared-code-requests-shared =
@@ -256,8 +241,6 @@
             python = pkgs.python39;
             pythoneda-shared-artifact-events =
               pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python39;
-            pythoneda-shared-artifact-shared =
-              pythoneda-shared-artifact-shared.packages.${system}.pythoneda-shared-artifact-shared-python39;
             pythoneda-shared-code-requests-jupyterlab =
               pythoneda-shared-code-requests-jupyterlab.packages.${system}.pythoneda-shared-code-requests-jupyterlab-python39;
             pythoneda-shared-code-requests-shared =
@@ -269,8 +252,6 @@
             python = pkgs.python310;
             pythoneda-shared-artifact-events =
               pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python310;
-            pythoneda-shared-artifact-shared =
-              pythoneda-shared-artifact-shared.packages.${system}.pythoneda-shared-artifact-shared-python310;
             pythoneda-shared-code-requests-jupyterlab =
               pythoneda-shared-code-requests-jupyterlab.packages.${system}.pythoneda-shared-code-requests-jupyterlab-python310;
             pythoneda-shared-code-requests-shared =
@@ -282,8 +263,6 @@
             python = pkgs.python311;
             pythoneda-shared-artifact-events =
               pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python311;
-            pythoneda-shared-artifact-shared =
-              pythoneda-shared-artifact-shared.packages.${system}.pythoneda-shared-artifact-shared-python311;
             pythoneda-shared-code-requests-jupyterlab =
               pythoneda-shared-code-requests-jupyterlab.packages.${system}.pythoneda-shared-code-requests-jupyterlab-python311;
             pythoneda-shared-code-requests-shared =
