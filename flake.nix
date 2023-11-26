@@ -41,6 +41,15 @@
         "pythoneda-shared-pythoneda-domain";
       url = "github:pythoneda-shared-code-requests-def/jupyterlab/0.0.4";
     };
+    pythoneda-shared-artifact-code-events = {
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
+      inputs.pythoneda-shared-pythoneda-banner.follows =
+        "pythoneda-shared-pythoneda-banner";
+      inputs.pythoneda-shared-pythoneda-domain.follows =
+        "pythoneda-shared-pythoneda-domain";
+      url = "github:pythoneda-shared-artifact-def/code-events/0.0.4";
+    };
     pythoneda-shared-code-requests-shared = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
