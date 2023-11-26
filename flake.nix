@@ -183,7 +183,7 @@
             banner = "${
                 pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python38
               }/bin/banner.sh";
-            extra-namespaces = "rydnr";
+            extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-artifact-git-python38;
             python = pkgs.python38;
@@ -197,7 +197,7 @@
             banner = "${
                 pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python39
               }/bin/banner.sh";
-            extra-namespaces = "rydnr";
+            extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-artifact-git-python39;
             python = pkgs.python39;
@@ -211,7 +211,7 @@
             banner = "${
                 pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python310
               }/bin/banner.sh";
-            extra-namespaces = "rydnr";
+            extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-artifact-git-python310;
             python = pkgs.python310;
@@ -225,7 +225,7 @@
             banner = "${
                 pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python311
               }/bin/banner.sh";
-            extra-namespaces = "rydnr";
+            extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-artifact-git-python311;
             python = pkgs.python311;
