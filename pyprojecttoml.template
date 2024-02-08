@@ -30,7 +30,7 @@ python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-artifact-events = "^@pythonedaSharedArtifactEvents@"
 pythoneda-shared-code-requests-jupyterlab = "^@pythonedaSharedCodeRequestsJupyterlab@"
 pythoneda-shared-code-requests-shared = "^@pythonedaSharedCodeRequestsShared@"
-pythoneda-shared-domain = "^@pythonedaSharedDomain@"
+pythoneda-shared-pythonlang-domain = "^@pythonedaSharedPythonlangDomain@"
 
 [build-system]
 requires = ["poetry-core"]
