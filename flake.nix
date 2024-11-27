@@ -39,7 +39,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-code-requests-def/jupyterlab/0.0.55";
+      url = "github:pythoneda-shared-code-requests-def/jupyterlab/0.0.56";
     };
     pythoneda-shared-artifact-code-events = {
       inputs.flake-utils.follows = "flake-utils";
@@ -57,7 +57,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-code-requests-def/shared/0.0.54";
+      url = "github:pythoneda-shared-code-requests-def/shared/0.0.55";
     };
     pythoneda-shared-pythonlang-banner = {
       inputs.flake-utils.follows = "flake-utils";
@@ -69,7 +69,7 @@
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
-      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.86";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.87";
     };
   };
   outputs = inputs:
@@ -78,8 +78,8 @@
       let
         org = "pythoneda-artifact";
         repo = "git";
-        version = "0.0.9";
-        sha256 = "1m28mgbk6n64957vnfh2n65214v1f8inhpwq1kbhrqgl96gv9k01";
+        version = "0.0.10";
+        sha256 = "02rzd96w75p6g0d2zxvc22ggrf272j9hrk8zy3kv2jbrzdvqy0ac";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
         pkgs = import nixos { inherit system; };
