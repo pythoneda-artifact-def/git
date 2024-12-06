@@ -20,56 +20,56 @@
   description = "Nix flake for pythoneda-artifact/git";
   inputs = rec {
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
-    nixos.url = "github:NixOS/nixpkgs/24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/24.05";
     pythoneda-shared-artifact-events = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-artifact-def/events/0.0.71";
+      url = "github:pythoneda-shared-artifact-def/events/0.0.72";
     };
     pythoneda-shared-code-requests-jupyterlab = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-code-requests-shared.follows =
         "pythoneda-shared-code-requests-shared";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-code-requests-def/jupyterlab/0.0.62";
+      url = "github:pythoneda-shared-code-requests-def/jupyterlab/0.0.63";
     };
     pythoneda-shared-artifact-code-events = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-artifact-def/code-events/0.0.62";
+      url = "github:pythoneda-shared-artifact-def/code-events/0.0.63";
     };
     pythoneda-shared-code-requests-shared = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-code-requests-def/shared/0.0.61";
+      url = "github:pythoneda-shared-code-requests-def/shared/0.0.62";
     };
     pythoneda-shared-pythonlang-banner = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
-      url = "github:pythoneda-shared-pythonlang-def/banner/0.0.71";
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:pythoneda-shared-pythonlang-def/banner/0.0.72";
     };
     pythoneda-shared-pythonlang-domain = {
       inputs.flake-utils.follows = "flake-utils";
-      inputs.nixos.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
-      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.93";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.94";
     };
   };
   outputs = inputs:
@@ -82,7 +82,7 @@
         sha256 = "02rzd96w75p6g0d2zxvc22ggrf272j9hrk8zy3kv2jbrzdvqy0ac";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.artifact.git";
-        pkgs = import nixos { inherit system; };
+        pkgs = import nixpkgs { inherit system; };
         description = "Domain of git artifacts";
         license = pkgs.lib.licenses.gpl3;
         homepage = "https://github.com/${org}/${repo}";
@@ -91,8 +91,8 @@
         archRole = "B";
         space = "A";
         layer = "D";
-        nixosVersion = builtins.readFile "${nixos}/.version";
-        nixpkgsRelease = "nixos-${nixosVersion}";
+        nixpkgsVersion = builtins.readFile "${nixpkgs}/.version";
+        nixpkgsRelease = "nixpkgs-${nixpkgsVersion}";
         shared = import "${pythoneda-shared-pythonlang-banner}/nix/shared.nix";
         pythoneda-artifact-git-for = { python, pythoneda-shared-artifact-events
           , pythoneda-shared-code-requests-jupyterlab
